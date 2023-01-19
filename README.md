@@ -8,6 +8,8 @@ this is a contact-template. Hope you liked it
 # ⚜ DEMO
 
 ![image](https://user-images.githubusercontent.com/97821844/213486096-d1aa3035-a6c7-44a8-ad8c-ca3525ff3f97.png)
+![image](https://user-images.githubusercontent.com/97821844/213491304-98fc55d8-afd9-4ee1-8005-ebcb682bab24.png)
+
 
 ### 📌 Requirements 
 
