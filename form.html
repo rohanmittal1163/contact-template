@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form designing</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		font-family: poppins,sans-serif;
+	}
+	*,*::after,*::before{
+		box-sizing: border-box;
+	}
+	body{
+		background: linear-gradient(135deg,#71b7e6,#9b59b6);
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		background-repeat: no-repeat;
+	}
+	.container{
+		background-color: white;
+		border-radius: 10px;
+		width: 50%;
+		margin: auto;
+		padding: 30px;
+	}
+	.reg{
+		color: black;
+		font-weight: bolder;
+		font-size: 25px;
+		position: relative;
+	}
+	.reg::after{
+		content: " ";
+		position: absolute;
+		bottom: -5px;
+		width: 6%;
+		height: 3px;
+		left: 0px;
+		background: linear-gradient(135deg,#71b7e6,#9b59b6);
+	}
+	.smallc{
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows:2 ;
+		margin-top: 8%;
+	}
+	.title{
+		font-weight: 600;
+		font-size: 15px;
+		color: rgba(0, 0, 0, 0.68);
+	}
+	input:not([type = 'radio']){
+		width: 90%;
+		height: 40px;
+		padding-left: 10px;
+		border-radius: 5px;
+		box-shadow: 0px 2px 2px lightgrey;
+		border: 2px solid lightgrey;
+		margin-top: 1%;
+	}
+	.bigc{
+		margin-top: 2%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		overflow: auto;
+	}
+	.gender{
+		font-weight: 400;
+		font-size: 14px;
+	}
+	.child{
+		margin-top: 3%;
+		display: flex;
+		flex-direction: row;
+	}
+	input[type='submit']{
+		width: 100%;
+		background: linear-gradient(135deg,#71b7e6,#9b59b6);
+		color: white;
+		font-weight: bold;
+		text-transform: capitalize;
+		letter-spacing: 2px;
+		font-size: 17px;
+		box-shadow: none;
+		border: none;
+		margin-top: 3%;
+		cursor: pointer;
+		}
+	input[type='submit']:hover{
+		background: linear-gradient(135deg,#9b59b6,#71b7e6);
+		}
+
+	input[type='radio']::after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+     input[type='radio']:checked:after {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        top: -1px;
+        left: 1px;
+        position: relative;
+        background: linear-gradient(135deg,#9b59b6,#71b7e6);
+        padding: 1px;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+	.child div{
+		display: flex;
+		align-items: center;
+		width: 20%;
+	}
+	@media all and (max-width: 1000px){
+	.bigc{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.smallc{
+		margin-top: 6%;
+
+	}
+	.reg::after{
+		width: 10%;
+	}
+	.bigc{
+		height: 300px;
+	}
+	}
+	@media all and (max-width: 680px){
+		.child{
+			flex-direction: column;
+		}
+		.child div{
+			width: max-content;
+		}
+		.container{
+			width: 80%;
+		}
+	}
+	::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track{
+	background: white;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 70px;
+  background: #999;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p class="reg">Registration</p>
+
+<form method="POST" autocomplete accept-charset="utf-8" enctype="multipart/form-data">
+	<div class="bigc">
+		<div class="smallc">
+		<label for="fullname" class="title">Full Name</label>
+		<input type="text" id="fullname" placeholder="Enter Your Full Name" required />
+		</div>
+
+		<div class="smallc">
+		<label for="username" class="title">Username</label>
+		<input type="text" id="username" placeholder="Enter Your Username" required />
+		</div>
+
+		<div class="smallc">
+		<label for="mail" class="title">Email</label>
+		<input type="email" id="mail" placeholder="Enter Your Email" required />
+		</div>
+
+		<div class="smallc">
+		<label for="contact" class="title">Phone Number</label>
+		<input type="tel" id="contact" placeholder="Enter Your Number" required maxlength="10" />
+		</div>
+
+		<div class="smallc">
+		<label for="pass" class="title">Password</label>
+		<input type="password" id="pass" placeholder="Enter Your Password" required />
+		</div>
+
+		<div class="smallc">
+		<label for="conpass" class="title">Confirm Password</label>
+		<input type="password" id="conpass" placeholder="Confirm Your Password" required />
+		</div>
+
+	</div>
+
+	<div style="margin-top: 4%">
+		<p class="title" style="font-size: 18px;">Gender</p>
+	<div class="child">
+	<div>
+		<input type="radio" id="gender1" name="a">
+		<label class="gender" for="gender1" >Male</label>
+	</div>
+	<div>
+		<input type="radio" id="gender2" name="a">
+		<label class="gender" for="gender2" >Female</label>
+	</div>
+	<div>
+		<input type="radio" id="gender3" name="a">
+		<label class="gender" for="gender3" >Prefer Not To Say</label>
+	</div>
+	</div>
+		</div>
+
+		<input type="submit"  value="register">
+</form>
+	</div>
+</body>
+</html>
